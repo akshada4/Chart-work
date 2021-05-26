@@ -1,0 +1,247 @@
+[
+ {
+   "Date": "08/01/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 10
+ },
+ {
+   "Date": "08/01/2015",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 1
+ },
+ {
+   "Date": "09/10/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 3
+ },
+ {
+   "Date": "09/10/2015",
+   "Product Name": "Cisco Switch",
+   "Number Of Bugs": 13
+ },
+ {
+   "Date": "09/10/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 6
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 8
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 1
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 5
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 7
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 10
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 12
+ },
+ {
+   "Date": "10/23/2015",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 6
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 4
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 5
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 7
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 9
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 11
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 18
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 16
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 4
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 16
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 18
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 20
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "Dell Server;",
+   "Number Of Bugs": 0
+ },
+ {
+   "Date": "12/12/2015",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 2
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Arista Router;",
+   "Number Of Bugs": 23
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 11
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 18
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 16
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 4
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 16
+ },
+ {
+   "Date": "01/01/2016",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 18
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 20
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 0
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 2
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Juniper Router",
+   "Number Of Bugs": 23
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 3
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 30
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 31
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 4
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 12
+ },
+ {
+   "Date": "02/26/2016",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 21
+ },
+ {
+   "Date": "03/09/2016",
+   "Product Name": "Dell Server",
+   "Number Of Bugs": 23
+ },
+ {
+   "Date": "03/09/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 2
+ },
+ {
+   "Date": "03/09/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 27
+ },
+ {
+   "Date": "03/09/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 28
+ },
+ {
+   "Date": "03/09/2016",
+   "Product Name": "Cisco Router",
+   "Number Of Bugs": 20
+ },
+ {
+   "Date": "04/19/2016",
+   "Product Name": "Arista Router",
+   "Number Of Bugs": 1
+ },
+ {
+   "Date": "04/19/2016",
+   "Product Name": "HP Server",
+   "Number Of Bugs": 0
+ }
+]
