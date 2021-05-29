@@ -1,0 +1,53 @@
+html {
+	font-size: 62.5%;
+}
+
+.products {
+	position: relative;
+	display: inline-block;
+	height: 50rem;
+	width: 15rem;
+	vertical-align: top;
+	margin-left: 40rem;
+}
+
+.products > div {
+	position: absolute;
+	top: 25%;
+}
+
+
+#chart {
+	margin-left: 2rem;
+	display: inline-block;
+	position: relative;
+	width: 50rem;
+	height: 50rem;
+}
+
+#chart svg {
+	position: absolute;
+	opacity: 0;
+	background: pink;
+	box-shadow : 0;
+}
+
+.btn {
+	border : none;
+	border-radius:5%;
+	font-family: 'sans-serif';
+	text-align: center;
+	line-height: 5rem;
+	font-size: 1.6rem;
+	height: 5rem;
+	width: 15rem;
+	background: #bfbdbd;
+	transition: all 0.4s ease-out;
+
+}
+
+.btn:hover {
+	background-color: black;
+	color: white;
+}
+
