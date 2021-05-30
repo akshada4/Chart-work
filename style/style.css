@@ -18,7 +18,8 @@ html {
 
 
 #chart {
-	margin-left: 2rem;
+	margin-left: 5rem;
+	top: 10rem;
 	display: inline-block;
 	position: relative;
 	width: 50rem;
@@ -27,27 +28,29 @@ html {
 
 #chart svg {
 	position: absolute;
-	opacity: 0;
+	display:none;
 	background: pink;
 	box-shadow : 0;
 }
 
 .btn {
 	border : none;
-	border-radius:5%;
+	background: white;
+	border-bottom: solid 1px black;
 	font-family: 'sans-serif';
 	text-align: center;
 	line-height: 5rem;
 	font-size: 1.6rem;
 	height: 5rem;
 	width: 15rem;
-	background: #bfbdbd;
+	margin: 2rem;
 	transition: all 0.4s ease-out;
-
+	cursor: pointer;
 }
 
 .btn:hover {
-	background-color: black;
-	color: white;
+	color: steelblue;
 }
+
+
 

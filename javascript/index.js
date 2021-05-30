@@ -1,12 +1,13 @@
-let fetchData = () => {
-	fetch('productdata/data.json')
-		.then(response =>  response.json())
-		.then(data => storeData(data));
-}
+const fetchData = () => {
+	return fetch('productdata/data.json')
+			.then(response =>  response.json())
+			.then(data => storeData(data));
+}	
 
-let plotData = (dataOfProducts, reportingDate) => {
+const plotData = (dataOfProducts, reportingDate) => {
 	let products = {};
 	let maxHeight = 0;
+
 	for (let product in dataOfProducts){
 		const productData = dataOfProducts[product];
 		let nameOfProduct = product.replace(/\s/g ,'').toLowerCase();
@@ -24,7 +25,6 @@ let plotData = (dataOfProducts, reportingDate) => {
 		}
 		products[nameOfProduct] = {date:date ,height: height};
 		maxHeight = Math.max(height[(height.length)-1],maxHeight);
-
 	}
 	for (let dataKey in products){		
 		for (let i = 0; i<reportingDate.length; i++){
@@ -35,7 +35,7 @@ let plotData = (dataOfProducts, reportingDate) => {
 	}
 }	
 
-let createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
+const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 	let margin = {top:25,
 		right: 10, 
 		bottom: 25,
@@ -91,11 +91,9 @@ let createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 	svg.append('g')
 	.attr('transform',`translate(${margin.left-5},${heightSvg - margin.bottom})`)
 	.call(xAxis);
-
-
 }
 
-let storeData = (data) => {
+const storeData = (data) => {
 	let dataExtracted = {};
 	let dateOfReport = new Set();
 	for (let dataKey in data) {
@@ -112,23 +110,53 @@ let storeData = (data) => {
 	}
 	reportingDate = [];
 	dateOfReport.forEach(d => reportingDate.push(d));
-	plotData(dataExtracted,reportingDate);
+	return {dataExtracted: dataExtracted, reportingDate: reportingDate};
 }
 
+const changePreviousActiveButton = (previousActiveBtn) => {
+	let svgId = previousActiveBtn.innerHTML
+	.replace(/\s/g,'').toLowerCase();
+	previousActiveBtn.style.color = 'black';
+	previousActiveBtn.style.borderColor= 'black';
+	document.getElementById(svgId).style.display = 'none';
+}
 
-let func = async () => {
-	await fetchData();
+const changeCurrentActiveButton = (currenBtn) => {
+	let svgId = currenBtn.innerHTML
+	.replace(/\s/g,'').toLowerCase();
+	document.getElementById(svgId).style.display = 'block';
+	currenBtn.style.borderColor = 'steelblue';
+	currenBtn.style.color = 'steelblue';
+}
+
+const handleClick = (event) => {
+	let clickedButton = document.getElementById(event.target.id);
+	let previousClickedButton = document.getElementById(activeButton);
+	changePreviousActiveButton(previousClickedButton);
+	changeCurrentActiveButton(clickedButton);
+	activeButton = event.target.id;
+}
+
+const intialPage = (btn) => {
+	btn.style.color = 'steelblue';
+	btn.style.borderColor ='steelblue';
+	let svgId = btn.innerHTML
+	.replace(/\s/g,'').toLowerCase();
+	document.getElementById(svgId).style.display = 'block';
+}
+
+const start = async () => {
+	const data = await fetchData();
+	plotData(data.dataExtracted, data.reportingDate);
 	let button = document.getElementsByClassName('btn');
-	for (let i = 0; i<button.length ; i++){
-		button[i].addEventListener('mouseover', () => {
-		let idOfSvg = button[i].innerHTML.replace(/\s/g,'').toLowerCase();
-		document.getElementById(idOfSvg).style.opacity = 1;
-	});
-	button[i].addEventListener('mouseout', () => {
-		let idOfSvg = button[i].innerHTML.replace(/\s/g,'').toLowerCase();
-		document.getElementById(idOfSvg ).style.opacity = 0;
-	});
-	}	
+	intialPage(button[0]);
+	button[0].addEventListener('click', handleClick);	
+	button[1].addEventListener('click', handleClick);
+	button[2].addEventListener('click', handleClick);
+	button[3].addEventListener('click', handleClick);
+	button[4].addEventListener('click', handleClick);
+	button[5].addEventListener('click', handleClick);
 }
 
-func();
+var activeButton = 'btn1';
+start();
