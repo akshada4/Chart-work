@@ -2,55 +2,51 @@ html {
 	font-size: 62.5%;
 }
 
+body {
+	height: 100%;
+}
+
+.main {
+	position : relative;
+	width: 80rem;
+	margin: 0 auto;
+	top: calc(50% - 25rem);
+}
 .products {
-	position: relative;
-	display: inline-block;
-	height: 50rem;
-	width: 15rem;
-	vertical-align: top;
-	margin-left: 40rem;
-}
-
-.products > div {
 	position: absolute;
-	top: 25%;
 }
-
 
 #chart {
-	margin-left: 5rem;
-	top: 10rem;
+	margin-left: 20rem;
 	display: inline-block;
 	position: relative;
-	width: 50rem;
+	width: 60rem;
 	height: 50rem;
 }
 
 #chart svg {
 	position: absolute;
 	display:none;
-	background: pink;
-	box-shadow : 0;
+	box-shadow : 0.5rem 0.5rem 1rem #bfbfbf,
+				-0.5rem -0.5rem 1rem #bfbfbf;
 }
 
 .btn {
+	display: block;
 	border : none;
 	background: white;
 	border-bottom: solid 1px black;
 	font-family: 'sans-serif';
-	text-align: center;
+	text-align: left;
 	line-height: 5rem;
 	font-size: 1.6rem;
+	padding-left: 0.5rem;
 	height: 5rem;
 	width: 15rem;
-	margin: 2rem;
-	transition: all 0.4s ease-out;
+	margin-bottom: 1.5rem;
 	cursor: pointer;
 }
 
-.btn:hover {
-	color: steelblue;
+.btn:nth-child(1) {
+	font-weight: bold;
 }
-
-
-

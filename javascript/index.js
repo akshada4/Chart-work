@@ -7,7 +7,6 @@ const fetchData = () => {
 const plotData = (dataOfProducts, reportingDate) => {
 	let products = {};
 	let maxHeight = 0;
-
 	for (let product in dataOfProducts){
 		const productData = dataOfProducts[product];
 		let nameOfProduct = product.replace(/\s/g ,'').toLowerCase();
@@ -42,7 +41,7 @@ const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 		left: 10};
 
 	let heightSvg = 500;
-	let widthSvg = 500;
+	let widthSvg = 600;
 	let yScale = d3.scaleLinear()
 		.domain([0,maxHeight])
 		.range([0,heightSvg - (margin.top + margin.bottom)]);
@@ -63,7 +62,8 @@ const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 	let yAxis = d3.axisLeft(vScale)
 	.ticks(10);
 
-	let xAxis = d3.axisBottom(uScale);
+	let xAxis = d3.axisBottom(uScale)
+	.ticks(8);
 
 	const svg = d3.select('#chart').append('svg')
 	.attr('height', heightSvg)
@@ -73,7 +73,7 @@ const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 	svg.selectAll('rect')
 		.data(barHeight)
 		.enter().append('rect')
-		.style('fill','black')
+		.style('fill','steelblue')
 		.attr('width', xScale.bandwidth())
 		.attr('height', height => {
 			return yScale(height);
@@ -86,7 +86,7 @@ const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 		});
 
 	svg.append('g')
-	.attr('transform',`translate(${1.25*(margin.left+margin.right)}, 0)`)
+	.attr('transform',`translate(${1.25 *(margin.left+margin.right)},0)`)
 	.call(yAxis);
 	svg.append('g')
 	.attr('transform',`translate(${margin.left-5},${heightSvg - margin.bottom})`)
@@ -96,6 +96,7 @@ const createBarGraph = (barHeight,reportingDate, svgId, maxHeight) => {
 const storeData = (data) => {
 	let dataExtracted = {};
 	let dateOfReport = new Set();
+	// get data in format {aristarouter: [{date:,numberOfBugs:}] }
 	for (let dataKey in data) {
 		const productName = data[dataKey]['Product Name'];
 		const date = data[dataKey].Date;
@@ -108,25 +109,24 @@ const storeData = (data) => {
 			dataExtracted[productName] = [{date: date,
 				numberOfBugs: numberOfBugs}];
 	}
+
 	reportingDate = [];
-	dateOfReport.forEach(d => reportingDate.push(d));
+	dateOfReport.forEach(d => reportingDate.push(d)); //x-axis values
 	return {dataExtracted: dataExtracted, reportingDate: reportingDate};
 }
 
 const changePreviousActiveButton = (previousActiveBtn) => {
 	let svgId = previousActiveBtn.innerHTML
 	.replace(/\s/g,'').toLowerCase();
-	previousActiveBtn.style.color = 'black';
-	previousActiveBtn.style.borderColor= 'black';
+	previousActiveBtn.style.fontWeight = 'normal';
 	document.getElementById(svgId).style.display = 'none';
 }
 
-const changeCurrentActiveButton = (currenBtn) => {
-	let svgId = currenBtn.innerHTML
+const changeCurrentActiveButton = (currentBtn) => {
+	let svgId = currentBtn.innerHTML
 	.replace(/\s/g,'').toLowerCase();
 	document.getElementById(svgId).style.display = 'block';
-	currenBtn.style.borderColor = 'steelblue';
-	currenBtn.style.color = 'steelblue';
+	currentBtn.style.fontWeight = 'bold';
 }
 
 const handleClick = (event) => {
@@ -137,9 +137,8 @@ const handleClick = (event) => {
 	activeButton = event.target.id;
 }
 
-const intialPage = (btn) => {
-	btn.style.color = 'steelblue';
-	btn.style.borderColor ='steelblue';
+const intialDisplay = (btn) => {
+	btn.style.fontWeight ='bold';
 	let svgId = btn.innerHTML
 	.replace(/\s/g,'').toLowerCase();
 	document.getElementById(svgId).style.display = 'block';
@@ -149,7 +148,7 @@ const start = async () => {
 	const data = await fetchData();
 	plotData(data.dataExtracted, data.reportingDate);
 	let button = document.getElementsByClassName('btn');
-	intialPage(button[0]);
+	intialDisplay(button[0]);
 	button[0].addEventListener('click', handleClick);	
 	button[1].addEventListener('click', handleClick);
 	button[2].addEventListener('click', handleClick);
@@ -158,5 +157,5 @@ const start = async () => {
 	button[5].addEventListener('click', handleClick);
 }
 
-var activeButton = 'btn1';
+var activeButton = 'btn1'; 
 start();
